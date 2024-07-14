@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/ceciivanov/go-challenge/internal/models"
-	"github.com/ceciivanov/go-challenge/internal/repository"
+	"github.com/ceciivanov/platform-go-challenge/internal/models"
+	"github.com/ceciivanov/platform-go-challenge/internal/repository"
 )
 
 // UserService struct defines methods related to user operations

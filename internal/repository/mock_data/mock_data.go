@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 
-	"github.com/ceciivanov/go-challenge/internal/models"
+	"github.com/ceciivanov/platform-go-challenge/internal/models"
 )
 
 // Age groups

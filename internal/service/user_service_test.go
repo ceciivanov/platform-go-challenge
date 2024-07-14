@@ -3,9 +3,9 @@ package service_test
 import (
 	"testing"
 
-	"github.com/ceciivanov/go-challenge/internal/models"
-	"github.com/ceciivanov/go-challenge/internal/repository"
-	"github.com/ceciivanov/go-challenge/internal/service"
+	"github.com/ceciivanov/platform-go-challenge/internal/models"
+	"github.com/ceciivanov/platform-go-challenge/internal/repository"
+	"github.com/ceciivanov/platform-go-challenge/internal/service"
 	"github.com/stretchr/testify/assert"
 )
 

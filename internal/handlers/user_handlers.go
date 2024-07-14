@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/ceciivanov/go-challenge/internal/service"
-	"github.com/ceciivanov/go-challenge/internal/utils"
+	"github.com/ceciivanov/platform-go-challenge/internal/service"
+	"github.com/ceciivanov/platform-go-challenge/internal/utils"
 	"github.com/gorilla/mux"
 )
 

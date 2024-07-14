@@ -8,10 +8,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ceciivanov/go-challenge/internal/handlers"
-	"github.com/ceciivanov/go-challenge/internal/models"
-	"github.com/ceciivanov/go-challenge/internal/repository"
-	"github.com/ceciivanov/go-challenge/internal/service"
+	"github.com/ceciivanov/platform-go-challenge/internal/handlers"
+	"github.com/ceciivanov/platform-go-challenge/internal/models"
+	"github.com/ceciivanov/platform-go-challenge/internal/repository"
+	"github.com/ceciivanov/platform-go-challenge/internal/service"
 
 	"github.com/gorilla/mux"
 )
