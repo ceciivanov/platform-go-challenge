@@ -1,7 +1,7 @@
 name: go-ci
 
-on:
-  workflow_dispatch: {}
+on: workflow_dispatch
+  ## Define the event that triggers the workflow
   # push:  # Run Workflow on implementation branch commits
   #   branches: [ 'implementation' ]
   #   paths-ignore:
