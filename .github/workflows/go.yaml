@@ -1,14 +1,14 @@
 name: go-ci
 
 on:
-  push:  # Run Workflow on implementation branch commits
-    branches: [ 'implementation' ]
-    paths-ignore:
-      - 'imgs/**'
-      - 'README.md'
-  pull_request:  # Run Workflow on main branch PR
-    branches: [ 'main']
-  workflow_dispatch:  # Run Workflow manually
+  workflow_dispatch:
+  # push:  # Run Workflow on implementation branch commits
+  #   branches: [ 'implementation' ]
+  #   paths-ignore:
+  #     - 'imgs/**'
+  #     - 'README.md'
+  # pull_request:  # Run Workflow on main branch PR
+  #   branches: [ 'main']
     
 
 jobs:
