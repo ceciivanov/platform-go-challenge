@@ -1,31 +1,117 @@
 # GlobalWebIndex Engineering Challenge
 
-## Introduction
+The GlobalWebIndex Engineering Challenge is an application designed to manage user data and their favorite assets, including charts, insights, and audience profiles. It showcases practical backend development principles and aims to demonstrate a modular approach to application architecture.
 
-This challenge is designed to give you the opportunity to demonstrate your abilities as a software engineer and specifically your knowledge of the Go language.
+## Table of Contents
 
-On the surface the challenge is trivial to solve, however you should choose to add features or capabilities which you feel demonstrate your skills and knowledge the best. For example, you could choose to optimise for performance and concurrency, you could choose to add a robust security layer or ensure your application is highly available. Or all of these.
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Dependencies](#dependencies)
+- [Setup and Installation](#setup-and-installation)
+  - [Running Locally](#running-locally)
+  - [Using Docker](#using-docker)
+- [Usage](#usage)
+  - [Endpoints](#endpoints)
+  - [Examples](#examples)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
 
-Of course, usually we would choose to solve any given requirement with the simplest possible solution, however that is not the spirit of this challenge.
+---
 
-## Challenge
+## Overview
 
-Let's say that in GWI platform all of our users have access to a huge list of assets. We want our users to have a peronal list of favourites, meaning assets that favourite or “star” so that they have them in their frontpage dashboard for quick access. An asset can be one the following
-* Chart (that has a small title, axes titles and data)
-* Insight (a small piece of text that provides some insight into a topic, e.g. "40% of millenials spend more than 3hours on social media daily")
-* Audience (which is a series of characteristics, for that exercise lets focus on gender (Male, Female), birth country, age groups, hours spent daily on social media, number of purchases last month)
-e.g. Males from 24-35 that spent more than 3 hours on social media daily.
+The project implements a backend service (API) that allows users to:
 
-Build a web server which has some endpoint to receive a user id and return a list of all the user’s favourites. Also we want endpoints that would add an asset to favourites, remove it, or edit its description. Assets obviously can share some common attributes (like their description) but they also have completely different structure and data. It’s up to you to decide the structure and we are not looking for something overly complex here (especially for the cases of audiences). There is no need to have/deploy/create an actual database although we would like to discuss about storage options and data representations.
+- Retrieve a list of their favorite assets categorized into charts, insights, and audience profiles.
+- Add new assets to their favorites.
+- Remove existing assets from their favorites.
+- Update details of existing favorite assets.
 
-Note that users have no limit on how many assets they want on their favourites so your service will need to provide a reasonable response time.
+## Project Structure
 
-A working server application with functional API is required, along with a clear readme.md. Useful and passing tests would be also be viewed favourably
+The project is organized into the following directories:
 
-It is appreciated, though not required, if a Dockerfile is included.
+- `cmd`: Contains the main application entry point.
+- `internal/models`: Contains the data models used in the application. 
+- `internal/repository`: Handles in-memory data storage and retrieval.
+- `internal/handlers`: Implements HTTP request handlers for the API endpoints.
+- `internal/service`: Implements business logic and interacts with repositories.
+- `internal/utils`: Contains utility functions, like decoding JSON data.
 
-## Submission
 
-Just create a fork from the current repo and send it to us!
+## Dependencies
 
-Good luck, potential colleague!
+The project leverages Go language features and standard libraries. Additionally, it uses some third-party libraries for routing and testing.
+
+- Go version - go1.22.4
+- Third-party libraries
+    - github.com/gorilla/mux
+    - github.com/stretchr/testify
+
+
+## Setup and Installation
+
+Explain how to set up and install your project.
+
+### Running Locally
+
+To run the application locally, follow these steps:
+
+1. Clone the repository:
+
+```bash
+git clone 
+``` 
+
+2. Change into the project directory:
+
+```bash
+cd globalwebindex-engineering-challenge
+```
+
+3. Build the application:
+
+```bash
+go mod tidy
+go build -o app cmd/app/main.go
+```
+
+4. Run the application:
+
+```bash
+./app
+```
+
+The application will start on port `8080` by default. You can access the API at `http://localhost:8080`.
+
+
+## Usage
+
+The application exposes RESTful endpoints for interacting with user data and favorite assets. Examples of API requests are provided to demonstrate functionality and usage scenarios.
+
+### Endpoints
+
+The API provides the following endpoints:
+
+- `GET /users/{userID}/favorites`: Retrieve a list of favorite assets for a user.
+- `POST /users/{userID}/favorites`: Add a new asset to a user's favorites.
+- `PUT /users/{userID}/favorites/{assetID}`: Update details of an existing favorite asset.
+- `DELETE /users/{userID}/favorites/{assetID}`: Remove an existing asset from a user's favorites.
+
+### Examples
+
+The following examples demonstrate how to interact with the API using `curl` commands.
+
+
+## Testing
+
+The project includes unit tests for the service and repository layers. The tests are implemented using the Go standard library and the `testify` library for assertions.
+
+To run the tests, execute the following command:
+
+```bash
+go test ./... -cover
+```
+
+
