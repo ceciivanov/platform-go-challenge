@@ -1,15 +1,16 @@
 name: go-ci
 
-on: workflow_dispatch
-  ## Define the event that triggers the workflow
-  # push:  # Run Workflow on implementation branch commits
-  #   branches: [ 'implementation' ]
-  #   paths-ignore:
-  #     - 'imgs/**'
-  #     - 'README.md'
-  # pull_request:  # Run Workflow on main branch PR
-  #   branches: [ 'main']
-    
+  # Define the event that triggers the workflow
+on:
+  push:  # Run Workflow on implementation branch commits
+    branches: [ 'implementation' ]
+    paths-ignore:
+      - 'imgs/**'
+      - 'README.md'
+  pull_request:  # Run Workflow on main branch PR
+    branches: [ 'main']
+  workflow_dispatch:
+    branches: [ 'implementation' ]
 
 jobs:
   full_ci:  # full ci job
