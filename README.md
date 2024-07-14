@@ -67,7 +67,7 @@ git clone https://github.com/ceciivanov/platform-go-challenge.git
 2. Change into the project directory:
 
 ```bash
-cd globalwebindex-engineering-challenge
+cd platform-go-cgallenge
 git checkout implementation
 ```
 
@@ -95,13 +95,13 @@ To run the application using Docker, follow these steps:
 1. Build the Docker image:
 
 ```bash
-docker build -t go-platform-challenge .
+docker build -t platform-go-challenge .
 ```
 
 2. Run the Docker container:
 
 ```bash
-docker run -p 8080:8080 go-platform-challenge
+docker run -p 8080:8080 platform-go-challenge
 ```
 
 The application will start inside a Docker container and be accessible at `http://localhost:8080`.
