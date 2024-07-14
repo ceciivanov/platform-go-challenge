@@ -16,8 +16,6 @@ The GlobalWebIndex Engineering Challenge is an application designed to manage us
 - [Testing](#testing)
 - [Performance](#performance)
   - [Benchmarking](#benchmarking)  
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
