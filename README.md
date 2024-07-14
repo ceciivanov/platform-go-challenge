@@ -261,7 +261,7 @@ The benchmarks will run and display the results, including the number of operati
 
 ## Continuous Integration with GitHub Actions
 
-This project uses GitHub Actions for continuous integration to ensure that all code changes are built, tested, and code coverage metrics are published. The CI pipeline is triggered on commits to the implementation branch and on pull requests to the main branch.
+This project uses GitHub Actions for continuous integration to ensure that all code changes are built, tested, and code coverage metrics are published. The CI pipeline is triggered on commits to the implementation branch and on pull requests targeting the main branch. There is an option to manually trigger the CI pipeline as well by adding the `workflow_dispatch` event. This event will only trigger a workflow run if the workflow file is on the default branch (main). This requires also all the code to be merged into the main branch. 
 
 ### Overview of CI Workflow
 
@@ -277,8 +277,7 @@ The CI pipeline performs the following steps:
 - Generate Code Coverage Report: Generates a coverage summary report.
 - Add Coverage PR Comment: Adds a comment to the pull request with the coverage results.
 
-By implementing this CI system, we ensure a robust and reliable codebase, with automated checks and balances to maintain code quality and coverage standards.
-
+By implementing this CI pipeline, the project ensures that all code changes are tested and that the coverage results are visible to the developers.
 
 ### Example of Coverage Report
 
