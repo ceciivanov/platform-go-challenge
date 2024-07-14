@@ -3,8 +3,13 @@ name: go-test
 on:
   push:  # Run Workflow on implementation branch commits
     branches: [ 'implementation' ]
+    paths-ignore:
+      - 'imgs/**'
+      - 'README.md'
   pull_request:  # Run Workflow on main branch PR
     branches: [ 'main']
+  workflow_dispatch:  # Run Workflow manually
+    
 
 jobs:
   full_ci:  # full ci job
