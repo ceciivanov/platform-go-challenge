@@ -7,10 +7,9 @@ on:
     paths-ignore:
       - 'imgs/**'
       - 'README.md'
+      - '.github/workflows/**'
   pull_request:  # Run Workflow on main branch PR
     branches: [ 'main']
-  workflow_dispatch:
-    branches: [ 'implementation' ]
 
 jobs:
   full_ci:  # full ci job
