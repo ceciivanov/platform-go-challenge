@@ -142,7 +142,7 @@ The API provides the following endpoints:
 
 ### Examples
 
-The following examples demonstrate how to interact with the API using `curl` commands. The examples are provided also in bash script in the `/scripts/examples.sh` file. Suggesting to run the commands one by one in the terminal in the order they are written in the script.
+The following examples demonstrate how to interact with the API using `curl` commands. There are examples include successful and unsuccessful requests to showcase the API's behavior in different scenarios. You can find them written as bash script in the `/scripts/examples.sh` file. Suggesting to run the commands one by one in the terminal in the order they are written in the script.
 
 ```bash
 # GET existing user favorites
