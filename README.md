@@ -16,6 +16,7 @@ The GlobalWebIndex Engineering Challenge is an application designed to manage us
 - [Testing](#testing)
 - [Performance](#performance)
   - [Benchmarking](#benchmarking)  
+- [Concurrency Handling](#concurrent-handling)
 - [Continuous Integration with GitHub Actions](#continuous-integration-with-github-actions)
 
 ---
@@ -266,6 +267,36 @@ go test -bench=. ./internal/handlers
 
 The benchmarks will run and display the results, including the number of operations per second and the time taken for each operation.
 
+
+## Concurrency Handling
+
+### Problem Statement
+
+When multiple operations such as adding, deleting, editing, or retrieving user favorites are performed concurrently, it can lead to race conditions. This occurs because the Go map type is not thread-safe, meaning concurrent read and write operations on a map can cause unexpected behavior and data corruption.
+
+### Solution
+
+To address this issue, concurrency control is implemented using `sync.RWMutex`. This approach ensures that the in-memory data structure can handle concurrent access without running into race conditions. 
+
+`RWMutex` provides a mechanism to allow multiple read operations to occur simultaneously while ensuring that that write operations have exclusive access.
+
+- `Lock()`: Acquired before performing write operations to ensure exclusive access.
+- `Unlock()`: Released after the write operation is complete.
+- `RLock()`: Acquired before performing read operations to allow multiple readers.
+- `RUnlock()`: Released after the read operation is complete.
+
+These methods are used in the `InMemoryUserRepository` operations to ensure that:
+- `Add`, `Edit` and `Delete` operations lock the repository for writing to ensure exclusive access during the modification.
+- `Get` operation locks the repository for reading, allowing concurrent read operations but ensuring no write operations occur simultaneously.
+
+### Tests
+To verify the thread safety and correctness of our implementation, concurrent tests are included for each of these operations. These tests simulate multiple goroutines performing the same operation concurrently and check for data consistency and absence of race conditions.
+
+To run the concurrent tests, execute the following command:
+
+```bash
+go test -race ./...
+```
 
 ## Continuous Integration with GitHub Actions
 
